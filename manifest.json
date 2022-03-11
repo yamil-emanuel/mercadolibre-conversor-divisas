@@ -1,0 +1,19 @@
+{
+  "name": "Mercado Libre conversor de divisas",
+  "description": "Conversor de divisas para Mercado Libre Argentina",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting","storage"],
+  "content_scripts": [
+          {
+             "matches": ["*://listado.mercadolibre.com.ar/*","*://www.mercadolibre.com.ar/*","*://*.mercadolibre.com.ar/*"],
+             "js": ["content.js"]
+         }
+     ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
